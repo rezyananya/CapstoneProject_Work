@@ -33,11 +33,6 @@ shinyUI(navbarPage(inverse = TRUE,
                                 br(),
                                 br(),
                                 br()
-                                #helpText("Based on the previous n words the next word is predicted. The limiting 
-                                         #case of the alforithm is n=3 where n is the number of words, after which 
-                                         #the algorithm backs off to the previous word and any further prediction
-                                         #is started afresh.Refer the ioslides and/or Notes Tab for further 
-                                         #details on Application design and execution.")
                                 
                               ),
                               mainPanel(
