@@ -1,0 +1,202 @@
+Syllabus
+
+
+Quick Start
+
+1.	Introducing R
+2.	R as a programming language
+3.	R as a computing environment
+4.	R as a community
+5.	R as an ecosystem
+6.	The need for R
+7.	Installing R
+8.	RStudio
+9.	RStudio's user interface
+10.	The console
+11.	The editor
+12.	The Environment pane
+13.	The History pane
+14.	The File pane
+15.	The Plots pane
+16.	The Packages pane
+17.	The Help pane
+18.	The Viewer pane
+19.	RStudio Server
+20.	A quick example
+
+
+Basic Objects
+1.	Vector
+2.	Numeric vector
+3.	Logical vector
+4.	Character vector
+5.	Subsetting vectors
+6.	Named vectors
+7.	Extracting an element
+8.	Telling the class of vectors
+9.	Converting vectors
+10.	Arithmetic operators for numeric vectors
+11.	Matrix
+12.	Creating a matrix
+13.	Naming rows and columns
+14.	Subsetting a matrix
+15.	Using matrix operators
+16.	Array
+17.	Creating an array
+18.	Subsetting an array
+19.	Lists
+20.	Creating a list
+21.	Extracting an element from a list
+22.	Subsetting a list
+23.	Named lists
+24.	Setting values
+25.	Other functions
+26.	Data frames
+27.	Creating a data frame
+28.	Naming rows and columns
+29.	Subsetting a data frame
+30.	Subsetting a data frame as a list
+31.	Subsetting a data frame as a matrix
+32.	Filtering data
+33.	Setting values
+34.	Setting values as a list
+35.	Setting values as a matrix
+36.	Factors
+37.	Useful functions for data frames
+38.	Loading and writing data on disk
+39.	Functions
+40.	Creating a function
+41.	Calling a function
+42.	Dynamic typing
+43.	Generalizing a function
+44.	Default value for function arguments
+
+
+	Managing Your Workspace
+1.	R's working directory
+2.	Creating an R project in RStudio
+3.	Comparing absolute and relative paths
+4.	Managing project files
+5.	Inspecting the environment
+6.	Inspecting existing symbols
+7.	Viewing the structure of an object
+8.	Removing symbols
+9.	Modifying global options
+10.	Modifying the number of digits to print
+11.	Modifying the warning level
+12.	Managing the library of packages
+13.	Getting to know a package
+14.	Installing packages from CRAN
+15.	Updating packages from CRAN
+16.	Installing packages from online repositories
+17.	Using package functions
+18.	Masking and name conflicts
+19.	Checking whether a package is installed
+
+
+ Basic Expressions
+1.	Assignment expressions
+2.	Alternative assignment operators
+3.	Using backticks with non-standard names
+4.	Conditional expressions
+5.	Using if as a statement
+6.	Using if as an expression
+7.	Using if with vectors
+8.	Using vectorized if: ifelse
+9.	Using switch to branch values
+10.	Loop expressions
+11.	Using the for loop
+12.	Managing the flow of a for loop
+13.	Creating nested for loops
+14.	Using the while loop
+
+
+Working with Basic Objects
+1.	Using object functions
+2.	Testing object types
+3.	Accessing object classes and types
+4.	Accessing data dimensions
+5.	Getting data dimensions
+6.	Reshaping data structures
+7.	Iterating over one dimension
+8.	Using logical functions
+9.	Logical operators
+10.	Logical functions
+11.	Aggregating logical vectors
+12.	Asking which elements are TRUE
+13.	Dealing with missing values
+14.	Logical coercion
+15.	Using math functions
+16.	Basic functions
+17.	Number rounding functions
+18.	Trigonometric functions
+19.	Hyperbolic functions
+20.	Extreme functions
+21.	Applying numeric methods
+22.	Root finding
+23.	Calculus
+24.	Derivatives
+25.	Integration
+26.	Using statistical functions
+27.	Sampling from a vector
+28.	Working with random distributions
+29.	Computing summary statistics
+30.	Computing covariance and correlation matrix
+31.	Using apply-family functions
+32.	lapply
+33.	sapply
+34.	vapply
+35.	mapply
+36.	apply
+
+Working with Strings
+1.	Getting started with strings
+2.	Printing texts
+3.	Concatenating strings
+4.	Transforming texts
+5.	Changing cases
+6.	Counting characters
+7.	Trimming leading and trailing whitespaces
+8.	Substring
+9.	Splitting texts
+10.	Formatting texts
+11.	Using Python string functions in R
+12.	Formatting date/time
+13.	Parsing text as date/time
+14.	Formatting date/time to strings
+15.	Using regular expressions
+16.	Finding a string pattern
+17.	Using groups to extract the data
+18.	Reading data in customizable ways
+
+
+Working with Data
+1.	Reading and writing data
+2.	Reading and writing text-format data in a file
+3.	Importing data via RStudio IDE
+4.	Importing data using built-in functions
+5.	Importing data using the readr package
+6.	Writing a data frame to a file
+7.	Reading and writing Excel worksheets
+8.	Reading and writing native data files
+9.	Reading and writing a single object in native format
+10.	Saving and restoring the working environment
+11.	Loading built-in datasets
+12.	Visualizing data
+13.	Creating scatter plots
+14.	Customizing chart elements
+15.	Customizing point styles
+16.	Customizing point colors
+17.	Creating line plots
+18.	Customizing line type and width
+19.	Plotting lines in multiple periods
+20.	Plotting lines with points
+21.	Plotting a multi-series chart with a legend
+22.	Creating bar charts
+23.	Creating pie charts
+24.	Creating histogram and density plots
+25.	Creating box plots
+26.	Analyzing data
+27.	Fitting a linear model
+28.	Fitting a regression tree
+
