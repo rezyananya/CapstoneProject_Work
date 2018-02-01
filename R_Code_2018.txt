@@ -1,0 +1,229 @@
+#Array:
+#An array is a natural extension to a matrix in its number of dimensions. More specifically, 
+#an array is a vector that is represented and accessible in a given number of dimensions (mostly more than two dimensions).
+#To create an array, we call array() by supplying a vector of data, how this data is arranged in different dimensions, 
+#and sometimes the names of the rows and columns of these dimensions.Suppose we have some data (10 integers from 0 to 9) 
+#and we need to arrange them in three dimensions: 1 for the first dimension, 5 for the second, and 2 for the third:
+a1 <- array(c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), dim = c(1, 5, 2))
+a1
+#we can add names for these dimensions when we create the array:
+a1 <- array(c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), dim =c(1, 5, 2),
+            dimnames =list(c("r1"), c("c1", "c2", "c3", "c4", "c5"), c("k1", "k2")))
+a1
+
+#we can call dimnames(x) <- to setup the names for each dimension by supplying a list of several character vectors:
+a0 <- array(c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10), dim = c(1, 5, 2))
+dimnames(a0) <- list(c("r1"), c("c1", "c2", "c3", "c4", "c5"), c("k1", "k2"))
+a0
+
+#Subsetting an Array:
+
+#The principle of subsetting an array is exactly the same as subsetting a matrix. Here, 
+#we can supply a vector for each dimension to extract a subset of an array:
+
+a1[1,,]
+a1[, 2,]
+a1[,,1]
+a1[1, 2:4, 1:2]
+a1[c("r1"), c("c1", "c3"), "k1"]
+
+#Lists
+#A list is a generic vector that is allowed to include different types of objects, even other lists.
+
+#Creating a List:
+#We can use list() to create a list, as the function name suggests. Different types of objects can be put into one list. 
+#For example, the following code creates a list that contains a single-element numeric vector, 
+#a two-entry logical vector, and a character vector of three values:
+
+L <- list(1, c(TRUE, FALSE), c("a", "b", "c"))
+L
+
+#We can assign names to each list entry using named arguments:
+Name_List <- list(x = 1, y = c(TRUE, FALSE), z = c("a", "b", "c"))
+Name_List
+
+#Extracting an element from a list:
+#There are various ways to access the elements of a list. The most common way is to use a dollar-sign ($) 
+#to extract the value of a list element by name:
+
+#There are various ways to access the elements of a list. 
+#The most common way is to use a dollar-sign ($) to extract the value of a list element by name:
+
+R <- list(x = 1, y= c(TRUE, FALSE), z = c("A","B","C","D"))
+R$z
+R$y
+R$x
+
+#Alternatively, we can supply a number in double square brackets to extract 
+#the value of the nth list member. For example, we can extract the value of 
+#the second member of list R, as follows:
+
+R[[2]]
+R[["y"]]
+
+#It can be more flexible to use double square brackets for value extraction from a list because, 
+#sometimes, we might not know which member we need to extract before a computation:
+
+member <- "z"
+R[[member]]
+
+#Subsetting a list:
+#In many cases, we need to extract multiple elements from a list. 
+#These multiple members also construct a list as a subset of the original list.
+#To subset a list, we can use single-square-bracket notation, just like what we use for vectors and matrices. 
+#We can extract some elements of a list and put them into a new list.
+
+R["x"]
+
+R[c("x","y")]
+
+R[1]
+
+R[c(1, 2)]
+
+R[c(TRUE, FALSE, TRUE)]
+
+#To summarize the above thing
+#To summarize, we can say that  [[ means extracting one element from a vector or list, 
+#and [ means subsetting a vector or list. Subsetting a vector will result in a vector. Likewise, 
+#subsetting a list will result in a list.
+
+#Named Lists:
+#Irrespective of whether the list members have already got names when the list is created, 
+#we can always name or rename the members of a list, by simply naming a vector:
+
+names(R) <- c("A","B","C")
+R
+
+#To remove their names, we replace the names of R with NULL:
+names(R) <- NULL
+R
+
+#Once the names of list members are removed, we can no longer access the 
+#list members by name but by position and logical criterion.
+
+#Setting Values:
+#Setting the values in a list is as straightforward as working with vectors:
+
+R <- list(x = 1, y = c(TRUE, FALSE), z = c("a", "b", "c"))
+R$x <- 0
+R
+
+#If we assign a value to a nonexisting member, we will add a new member to the list with the given name or position:
+R$m <- 4
+R
+
+#Also, we can set multiple values at the same time:
+R[c("y", "z")] <- list(y = "new value for y", z = c(1, 2))
+R
+#If we need to remove some of the members in a list, just assign the NULL value to them:
+R$x <- NULL
+R
+#We can remove more than one member from a list altogether:
+R[c("z","m")]<- NULL
+R
+
+
+#Other Functions:
+#Many functions in R are related to lists. For example, 
+#if we are not sure whether an object is a list or not, we can call is.list() to find out:
+
+R1 <- list(a = c(1, 2, 3), b = c("x", "y", "z", "w"))
+is.list(R1)
+is.list(R1$a)
+
+#Here in the above example,R1 is a list, and but R1$a is a numeric vector rather than a list.
+
+#We can also convert a vector to a list using as.list():
+
+R2 <- as.list(c(a = 1, b =2, c = 3))
+R2
+
+#It is also easy to coerce a list to a vector by calling unlist that basically converts all list 
+#members and puts them to a vector of a compatible type:
+
+R3 <- list(a = 1, b = 2, c = 3)
+
+unlist(R3)
+
+
+#If we unlist a list of numbers and texts in mixture, all members will be converted to the 
+#closest type that each one can be converted to:
+
+R4 <- list(a = 1, b = 2, c = "hello")
+unlist(R4)
+
+#Here, R4$a and R4$b are numbers and can be converted to a character; however, 
+#butR4$c is a character vector and cannot be converted to numeric values. Therefore, 
+#their closest type that is compatible with all elements is a character vector.
+
+#***************************************************************************************
+  
+#Data frames:
+#A data frame represents a set of data with a number of rows and columns. It looks like a matrix but its 
+#columns are not necessarily of the same type. This is consistent with the most commonly seen formats of 
+#datasets: each row, or data record, is described by multiple columns of various types.
+
+#Name       Gender  Age  Major
+#Deepan      Male   32   Maths
+#Abhishek    Male   25   Statistics
+#Rupa       Female  26   Computer
+#Raghu       Male   30   Computer Science
+
+#Creating a data frameTo create a data frame, we can call data.frame() 
+#and supply the data of each column by a vector of the corresponding type:
+
+Data_Frame <- data.frame(Name = c("Deepan", "Abhishek","Rupa","Raghu"),Gender = c("Male", "Male","Female","Male"),
+                         Age = c(32,25,26,30),Major = c("Maths","Statistics","Computer","Computer Science"))
+Data_Frame
+
+
+#Note that creating a data frame is exactly the same as creating a list. This is because, in essence, 
+#a data frame is a list in which each element is a vector and represents a table column and has the same 
+#number of elements.
+
+#Other than creating a data frame from raw data, we can also create it from a list by calling 
+#either (data.frame) directly or (as.data.frame):
+
+R1 <- list(x = c(1, 2, 3), y = c("a", "b", "c"))
+
+data.frame(R1)
+
+as.data.frame(R1)
+
+
+#We can also create a data frame from a matrix with the same method:
+R2 <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow = 3, byrow = FALSE)
+
+data.frame(R2)
+
+as.data.frame(R2)
+
+# You can see above that Note that the conversion also automatically assigns column names to the 
+#new data frame. In fact, as you may verify, if the matrix already has column names or row names, 
+#they will be preserved in the conversion.
+
+#Naming Rows and Columns:
+#Since a data frame is a list but also looks like a matrix, the ways we access these two types of objects both apply to a data frame:
+
+df1 <- data.frame(id = 1:5, x = c(0, 2, 1, -1, -3), y = c(0.5, 0.2, 0.1, 0.5, 0.9))
+
+df1
+
+#We can rename the columns and rows just like we do with a matrix:
+
+colnames(df1) <- c("id", "level", "score")
+rownames(df1) <- letters[1:5]
+
+df1
+
+
+#Subsetting a data frame:
+#Since a data frame is a matrix-like list of column vectors, we can use both sets of notations 
+#to access the elements and subsets in a data frame.
+
+#Subsetting a data frame as a list:
+#If we would like to regard a data frame as a list of vectors, we can use list notations to 
+#extract a value or perform subsetting.
+
+
